@@ -1,21 +1,11 @@
 package io.wellbeings.anatome;
 
-import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
-import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TabHost;
 import android.widget.TextView;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
-
-import java.lang.reflect.Constructor;
 
 /**
  * Section loads widget navigated to,
@@ -59,7 +49,8 @@ public class Section extends FragmentActivity {
         // Set correct header, capitalising first letter.
         ((TextView)findViewById(R.id.section_name)).setText(
                 section.substring(0, 1).toUpperCase() +
-                        section.substring(1));
+                        section.substring(1)
+        );
 
         // Set correct section icon.
         final int resourceId = getResources().getIdentifier(
@@ -89,7 +80,6 @@ public class Section extends FragmentActivity {
     private void loadFragments() {
 
         /* Create interactive fragment. */
-
         FragmentTabHost mTabHost = (FragmentTabHost) findViewById(R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
 
@@ -136,8 +126,6 @@ public class Section extends FragmentActivity {
 
 
         /* Create informative fragment. */
-
-
 
     }
 
